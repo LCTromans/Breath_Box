@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #2ca2c8;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.tail {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background: radial-gradient(circle, #f3f0fb 0%, rgba(0, 255, 255, 0) 100%);
+    border-radius: 50%;
+    filter: blur(6px);
+    opacity: 1;
+    animation: traceSquare 16s linear infinite;
+}
+
+.tail:nth-child(n+2) {
+    animation-delay: calc((var(--n) - 1) * 0.1s);
+    filter: blur(calc(var(--n) * 1px));
+    opacity: calc(1 - var(--n) * 0.05);
+    width: calc(20px - var(--n) * 0.5px);
+    height: calc(10px - var(--n) * 0.25px);
+}
+
+@keyframes traceSquare {
+    0% {
+        top: 0;
+        left: 0;
+    }
+
+    25% {
+        top: 0;
+        left: 100%;
+    }
+
+    50% {
+        top: 100%;
+        left: 100%;
+    }
+
+    75% {
+        top: 100%;
+        left: 0;
+    }
+
+    100% {
+        top: 0;
+        left: 0;
+    }
+}
+
+.text-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #f3f0fb;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}

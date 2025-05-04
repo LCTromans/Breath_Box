@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Breath Box</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="text-display" class="text-display" role="status" aria-live="polite"></div>
+        <div class="tail" style="--n: 1"></div>
+        <div class="tail" style="--n: 2"></div>
+        <div class="tail" style="--n: 3"></div>
+        <div class="tail" style="--n: 4"></div>
+        <div class="tail" style="--n: 5"></div>
+        <div class="tail" style="--n: 6"></div>
+        <div class="tail" style="--n: 7"></div>
+        <div class="tail" style="--n: 8"></div>
+        <div class="tail" style="--n: 9"></div>
+        <div class="tail" style="--n: 10"></div>
+        <div class="tail" style="--n: 11"></div>
+        <div class="tail" style="--n: 12"></div>
+        <div class="tail" style="--n: 13"></div>
+        <div class="tail" style="--n: 14"></div>
+        <div class="tail" style="--n: 15"></div>
+        <div class="tail" style="--n: 16"></div>
+        <div class="tail" style="--n: 17"></div>
+        <div class="tail" style="--n: 18"></div>
+        <div class="tail" style="--n: 19"></div>
+        <div class="tail" style="--n: 20"></div>
+      </div>
+      <script>
+        const messages = ["Breathe Out", "Hold", "Breathe In", "Hold"];
+        const display = document.getElementById("text-display");
+        let index = 0;
+    
+        setInterval(() => {
+          display.textContent = messages[index];
+          index = (index + 1) % messages.length;
+        }, 4000);
+      </script>
+</body>
+
+</html>
