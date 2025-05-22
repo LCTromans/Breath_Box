@@ -4,8 +4,25 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #2ca2c8;
+    background: linear-gradient(
+    to bottom,
+    #06518b,
+    #076299,
+    #0b6ea5,
+    #1c8bb8,
+    #2498bd,
+    #34a9ca
+    );
+    background-size: 400% 100%;
+    animation: gradientShift 4s ease infinite;
+    color: #101705;
     overflow: hidden;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 0% 100%; }
+  100% { background-position: 0% 0%; }
 }
 
 .container {
